@@ -1,0 +1,29 @@
+<div>
+    <h2>Clientes</h2>
+
+    <ul>
+      <li *ngFor="let cliente of clientes">
+        {{ cliente.nome }}
+        <button (click)="excluirCliente(cliente.id)">Excluir</button>
+      </li>
+    </ul>
+
+    <div>
+      <h3>Cadastrar Novo Cliente</h3>
+      <form (submit)="cadastrarCliente()">
+        <label for="novoCliente">Nome:</label>
+        <input type="text" id="novoCliente" [(ngModel)]="novoCliente" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>Atualizar Cliente</h3>
+      <form (submit)="atualizarCliente()">
+        <label for="clienteAtualizado">Nome:</label>
+        <input type="text" id="clienteAtualizado" [(ngModel)]="clienteAtualizado" required>
+        <button type="submit">Atualizar</button>
+      </form>
+    </div>
+  </div>
+  

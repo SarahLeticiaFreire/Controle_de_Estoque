@@ -1,0 +1,29 @@
+<div>
+    <h2>Fornecedores</h2>
+
+    <ul>
+      <li *ngFor="let fornecedor of fornecedores">
+        {{ fornecedor.nome }}
+        <button (click)="excluirFornecedor(fornecedor.id)">Excluir</button>
+      </li>
+    </ul>
+
+    <div>
+      <h3>Cadastrar Novo Fornecedor</h3>
+      <form (submit)="cadastrarFornecedor()">
+        <label for="novoFornecedor">Nome:</label>
+        <input type="text" id="novoFornecedor" [(ngModel)]="novoFornecedor" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>Atualizar Fornecedor</h3>
+      <form (submit)="atualizarFornecedor()">
+        <label for="fornecedorAtualizado">Nome:</label>
+        <input type="text" id="fornecedorAtualizado" [(ngModel)]="fornecedorAtualizado" required>
+        <button type="submit">Atualizar</button>
+      </form>
+    </div>
+  </div>
+  

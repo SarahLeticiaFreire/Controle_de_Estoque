@@ -1,0 +1,25 @@
+<div>
+    <h2>Vendas</h2>
+
+    <ul>
+      <li *ngFor="let venda of vendas">
+        {{ venda.dataHora | date:'medium' }} - Total: {{ venda.totalVenda | currency }}
+        <button (click)="detalharVenda(venda.id)">Detalhar</button>
+      </li>
+    </ul>
+
+    <div *ngIf="vendaDetalhes.id">
+      <h3>Detalhes da Venda</h3>
+      <p>Data/Hora: {{ vendaDetalhes.dataHora | date:'medium' }}</p>
+      <p>Total: {{ vendaDetalhes.totalVenda | currency }}</p>
+
+    </div>
+
+    <div>
+      <h3>Cadastrar Nova Venda</h3>
+      <form (submit)="cadastrarVenda()">
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+  
